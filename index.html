@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22a8e8" />
+  <title>Mufradat Quest — مغامرة المفردات</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <button class="icon-btn" id="homeBtn" aria-label="Beranda">🏠</button>
+    <a class="brand" href="#home" aria-label="Mufradat Quest beranda"><span class="brand-icon">📖</span><span>Mufradat <b>Quest</b><small>مغامرة المفردات</small></span></a>
+    <div class="wallet"><span>⭐ <b id="xpTop">0</b></span><span>🪙 <b id="coinsTop">0</b></span></div>
+  </header>
+
+  <main id="app" class="app-shell">
+    <section id="homePage" class="page hero-page">
+      <div class="hero-copy">
+        <span class="eyebrow">PETUALANGAN BELAJAR BAHASA ARAB</span>
+        <h1>Yuk, jelajahi<br><span>dunia mufradat!</span></h1>
+        <p>Belajar kosakata bahasa Arab lewat misi seru, gambar lucu, dan hadiah kejutan.</p>
+        <button class="primary-btn big" id="startBtn">▶ Mulai Petualangan</button>
+        <div class="mini-stats"><span>🧩 Belajar sambil bermain</span><span>🏆 Kumpulkan hadiah</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="sun">☀️</div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div><div class="castle">🏫</div><div class="tree tree-one">🌳</div><div class="tree tree-two">🌲</div><div class="path"></div><div class="kid">🧒🏻<span>🎒</span></div><div class="sign">يَلَّا نَتَعَلَّمُ!</div><div class="flower flower-one">🌼</div><div class="flower flower-two">🌷</div></div>
+      <div class="home-bottom"><div class="tip-card"><span class="tip-icon">💡</span><div><b>Tips Petualang</b><p>Pelajari kata terlebih dahulu, lalu selesaikan misi untuk mendapatkan bintang!</p></div></div><div class="progress-card"><div class="progress-heading"><b>Petualanganmu</b><span id="overallProgressText">0% selesai</span></div><div class="progress-track"><div id="overallProgress" class="progress-fill"></div></div></div></div>
+    </section>
+
+    <section id="mapPage" class="page hidden">
+      <div class="section-heading"><div><span class="eyebrow">PILIH TUJUANMU</span><h1>🗺️ Peta Petualangan</h1><p>Selesaikan misi untuk membuka dunia baru.</p></div><div class="level-pill">🌟 Level <b id="levelNum">1</b></div></div>
+      <div class="map-board">
+        <div class="map-decoration map-cloud">☁️</div><div class="map-decoration map-rainbow">🌈</div><div class="map-path"></div>
+        <button class="world-card school-world" data-world="school"><span class="world-art">🏫</span><span class="world-name">Dunia Sekolah</span><span class="world-arabic">الْمَدْرَسَةُ</span><span class="world-progress" id="schoolProgress">0/5 misi</span><span class="world-status">▶ Mulai</span></button>
+        <button class="world-card home-world" data-world="home"><span class="lock-badge" id="homeLock">🔒</span><span class="world-art">🏠</span><span class="world-name">Dunia Rumah</span><span class="world-arabic">الْبَيْتُ</span><span class="world-progress" id="homeProgress">0/5 misi</span><span class="world-status">🔒 Terkunci</span></button>
+        <button class="world-card garden-world" data-world="garden"><span class="lock-badge" id="gardenLock">🔒</span><span class="world-art">🌳</span><span class="world-name">Dunia Taman</span><span class="world-arabic">الْحَدِيقَةُ</span><span class="world-progress" id="gardenProgress">0/5 misi</span><span class="world-status">🔒 Terkunci</span></button>
+        <button class="world-card market-world" data-world="market"><span class="lock-badge" id="marketLock">🔒</span><span class="world-art">🛒</span><span class="world-name">Dunia Pasar</span><span class="world-arabic">السُّوقُ</span><span class="world-progress" id="marketProgress">0/5 misi</span><span class="world-status">🔒 Terkunci</span></button>
+        <div class="map-note">🧭 Mulai dari Dunia Sekolah. Kumpulkan bintang untuk membuka area berikutnya!</div>
+      </div>
+    </section>
+
+    <section id="learnPage" class="page hidden">
+      <div class="section-heading compact"><div><button class="text-back" data-go="mapPage">← Kembali ke peta</button><span class="eyebrow">KENALI KATA-KATANYA</span><h1>📚 Belajar Mufradat</h1><p id="learnTheme">Dunia Sekolah</p></div><div class="counter-pill" id="learnCounter">1 / 5</div></div>
+      <div class="learning-card"><div class="word-illustration" id="learnEmoji">📘</div><div class="word-content"><span class="word-label">KOSAKATA BAHASA ARAB</span><div id="learnArabic" class="arabic-word" lang="ar" dir="rtl">كِتَابٌ</div><div id="learnMeaning" class="meaning-pill">Buku</div><div class="example-box"><b>Contoh kalimat</b><p id="learnSentence" lang="ar" dir="rtl">هَذَا كِتَابٌ</p><span id="learnTranslation">Ini sebuah buku.</span></div><button class="audio-btn" id="audioBtn">🔊 Dengarkan pelafalan</button></div></div>
+      <div class="learn-controls"><button class="secondary-btn" id="prevWord">← Sebelumnya</button><div class="dots" id="learnDots"></div><button class="primary-btn" id="nextWord">Selanjutnya →</button></div>
+      <div class="center-action"><button class="primary-btn big" id="playMissionBtn">🎯 Aku siap! Mulai Misi</button></div>
+    </section>
+
+    <section id="gamePage" class="page hidden">
+      <div class="game-top"><button class="text-back" data-go="learnPage">← Belajar dulu</button><div class="game-score">⭐ <b id="gameXP">0</b> <span>•</span> Soal <b id="questionNumber">1/5</b></div></div>
+      <div class="quiz-progress"><div id="quizProgressFill"></div></div>
+      <div class="quiz-card"><div class="quiz-kicker" id="quizKicker">MISI DUNIA SEKOLAH</div><h2 id="quizPrompt">Pilih arti kata berikut!</h2><div class="quiz-picture" id="quizEmoji">📘</div><div class="quiz-arabic" id="quizArabic" lang="ar" dir="rtl">كِتَابٌ</div><button class="audio-small" id="quizAudio" aria-label="Dengarkan kata">🔊 Dengarkan</button><div class="answer-grid" id="answerGrid"></div><div id="feedback" class="feedback" aria-live="polite"></div><button id="nextQuestion" class="primary-btn next-question hidden">Soal berikutnya →</button></div>
+      <p class="gentle-note">🌈 Tidak apa-apa jika salah. Setiap jawaban adalah kesempatan untuk belajar!</p>
+    </section>
+
+    <section id="resultPage" class="page hidden"><div class="result-card"><div class="confetti">🎉 ✨ 🎊</div><div class="result-avatar" id="resultAvatar">🧒🏻</div><span class="eyebrow">MISI SELESAI</span><h1 id="resultTitle">Hebat sekali!</h1><p id="resultSubtitle">Kamu sudah menyelesaikan misimu.</p><div class="result-score"><span>Skor</span><strong id="finalScore">5/5</strong><div id="starRating" class="star-rating">⭐⭐⭐</div></div><div class="reward-row"><div class="reward-pill">⭐ +<b id="earnedXP">50</b> XP</div><div class="reward-pill">🪙 +<b id="earnedCoins">10</b> Koin</div></div><div id="reviewBox" class="review-box"></div><div class="result-actions"><button class="secondary-btn" id="retryBtn">🔁 Ulangi Misi</button><button class="primary-btn" id="backMapBtn">Kembali ke Peta →</button></div></div></section>
+
+    <section id="dictionaryPage" class="page hidden"><div class="section-heading"><div><span class="eyebrow">KOLEKSI KATA</span><h1>📖 Kamus Mufradat</h1><p>Semua kosakata petualanganmu ada di sini.</p></div></div><div class="dictionary-tools"><input id="dictionarySearch" type="search" placeholder="Cari kata Arab atau artinya…" aria-label="Cari kosakata"/><select id="dictionaryFilter" aria-label="Filter tema"><option value="all">Semua tema</option><option value="school">Sekolah</option><option value="home">Rumah</option><option value="garden">Taman</option><option value="market">Pasar</option></select></div><div id="dictionaryList" class="dictionary-list"></div></section>
+
+    <section id="profilePage" class="page hidden"><div class="profile-card"><div class="profile-avatar">🧒🏻</div><span class="eyebrow">KARTU PETUALANG</span><h1>Petualang Cilik</h1><div class="level-pill">🌟 Level <b id="profileLevel">1</b></div><div class="profile-stats"><div><strong id="profileXP">0</strong><span>Total XP</span></div><div><strong id="profileCoins">0</strong><span>Koin</span></div><div><strong id="profileMissions">0</strong><span>Misi selesai</span></div></div><h3>🏅 Koleksi Bintang</h3><div id="badgeList" class="badge-list"></div><button id="resetProgress" class="reset-btn">Mulai ulang progres</button></div></section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navigasi utama"><button class="nav-item active" data-page="homePage"><span>🏠</span>Beranda</button><button class="nav-item" data-page="mapPage"><span>🗺️</span>Peta</button><button class="nav-item" data-page="dictionaryPage"><span>📚</span>Kamus</button><button class="nav-item" data-page="profilePage"><span>🏆</span>Profil</button></nav>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
